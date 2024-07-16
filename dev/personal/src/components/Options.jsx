@@ -16,7 +16,7 @@ const Options = ({ tab, handle }) => {
                 <button className={`${tab === 1 ? activeDesc : defaultDesc}`} onClick={() => handleClick(1)}>Work</button>
                 <button className={`${tab === 2 ? activeDesc : defaultDesc}`} onClick={() => handleClick(2)}>Projects</button>
                 <button className={`${tab === 3 ? activeDesc : defaultDesc}`} onClick={() => handleClick(3)}>Connect</button>
-                <button className={`${tab === 4 ? activeDesc : defaultDesc}`} onClick={() => handleClick(4)}>Writing</button>
+{/*  Commenting this out until page is finished!             <button className={`${tab === 4 ? activeDesc : defaultDesc}`} onClick={() => handleClick(4)}>Writing</button> */}  
             </div>
         </div>
     )
