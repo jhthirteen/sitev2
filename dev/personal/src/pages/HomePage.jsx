@@ -15,7 +15,7 @@ const HomePage = () => {
     return (
         <>
             <div className="min-h-screen flex bg-black">
-                <div className="flex flex-col">
+                <div className="flex flex-col mt-10">
                     <Header />
                     <HomeText />
                     <Options tab={activeTab} handle={handleChange}/>
