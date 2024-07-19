@@ -1,9 +1,15 @@
 import pfp from '../assets/headshot.jpg'
+import backdrop from '../assets/syracuse.jpeg'
 
 const Header = () => {
     return(
-        <div className="ml-20 mt-10">
-            <img src={pfp} alt="Header" className="w-36 h-36 rounded-full" />
+        <div className="flex flex-col items-center "> 
+            <div className="h-[50vh] overflow-hidden">
+                <img src={backdrop} className="w-screen"/> 
+            </div>
+            <div className="relative top-[-50%]" >
+                <img src={pfp} alt="Header" className="w-52 h-52 rounded-full" />
+            </div>        
         </div>
     )
 };
