@@ -7,9 +7,7 @@ const Header = () => {
             <div className="h-[50vh] overflow-hidden">
                 <img src={backdrop} className="w-screen"/> 
             </div>
-            <div className="relative top-[-50%]" >
-                <img src={pfp} alt="Header" className="w-52 h-52 rounded-full" />
-            </div>        
+                <img src={pfp} alt="Header" className="w-52 h-52 rounded-full transform -translate-y-1/2" />   
         </div>
     )
 };

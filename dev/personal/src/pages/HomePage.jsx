@@ -33,7 +33,7 @@ const HomePage = () => {
                     <Options tab={activeTab} handle={handleChange}/>
                     <Connect />
                 </div>
-                <div className="flex-grow">
+                <div className="flex flex-col items-center">
                     {activeTab !== 0 && (
                     <div ref={optionsTextRef}>
                         <OptionsText tab={activeTab} />    
