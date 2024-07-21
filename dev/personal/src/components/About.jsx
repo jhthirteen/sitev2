@@ -17,7 +17,7 @@ const About = () => {
             {tab2 && (
                 <>
                     <p>In my free time, I love to stay active. I love training for distance running, rock climbing, and playing pickup basketball. Being local to the Adirondack Mountains and having family in Colorado, I love to get outside and hike when I can as well. I'm always listening to new music and reading too, my Spotify and Goodreads Accounts can be found under 'Connect'</p>
-                    <img src={aboutImg} className="w-80 mt-5 mx-auto"/>
+                    <img src={aboutImg} className="w-80 mt-5 mx-auto mb-5"/>
                 </>
             )}
         </div>

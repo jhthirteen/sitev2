@@ -4,7 +4,7 @@ import ConnectEdDemo from '../assets/ConnectEdDemo.mp4'
 const Projects = () => {
     
     const [tab1, setTab1] = useState(true);
-    const [tab2, setTab2] = useState(false);
+    const [tab2, setTab2] = useState(true);
 
     const active = "text-sky-500 text-2xl font-bold italic block text-left";
     const notActive = "text-sky-500 text-2xl font-bold block text-left";
@@ -20,7 +20,7 @@ const Projects = () => {
                 </video>
             </>
             )}
-            <button className={`${tab2 ? active : notActive}`} onClick={() => setTab2(!tab2)}>Internship Capstone: Security Risks and Safe Use of AI</button>
+            <button className={`${tab2 ? active : notActive}`} onClick={() => setTab2(!tab2)}>Internship Capstone: Security Risks and Safe Use of Generative AI</button>
             {tab2 && (<p>Identified strengths of LLM's like the ability to find specific references in large text documents, and pitfalls like faithful and domain-based knowledge hallucinations. The presentation then highlighted areas within the firm that could benefit from the use of generative AI, and areas where it may be best to be avoided. Finally, the project concluded with highlighting new areas that generative AI was being used in the cybersecurity space, from complex deepfake attacks to enhanced phishing campaigns. This was presented to upper management at the end of the internsihp.</p>)}
         </div>
     )
