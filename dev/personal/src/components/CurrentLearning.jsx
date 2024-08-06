@@ -9,10 +9,10 @@ const CurrentLearning = () => {
 
     return (
         <div className="text-white">
-            <button className={`${tab1 ? active : notActive}`} onClick={() => setTab1(!tab1)}>The Elements of Statistical Learning: Data Mining, Inference, and Prediction</button>
+            <button className={`${tab1 ? active : notActive}`} onClick={() => setTab1(!tab1)}>Gödel, Escher, Bach</button>
             {tab1 && ( 
             <>
-                <p>I am currently working through this book to gain foundational knowledge in the mathematics that supports data science and machine learning. So far, I have covered Linear Regression models, K-Nearest Neighbors, and an introduction to statistical decision theory. For linear regression models, this covered defining loss functions that give the best prediction for the different model types, and different prediction types, like quantitative vs. qualitative.</p>
+                <p>A book about the nature of intelligence, examining how meaningless symbols can take on meaning under a certain level of complexity, and how self-reference contributes to this process.</p>
             </>
             )}
             <button className={`${tab2 ? active : notActive}`} onClick={() => setTab2(!tab2)}>Fall 2024 Coursework</button>
