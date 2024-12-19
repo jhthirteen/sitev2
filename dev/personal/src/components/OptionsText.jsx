@@ -6,7 +6,7 @@ import CurrentLearning from './CurrentLearning.jsx'
 const OptionsText = ({ tab }) => {
     return(
         <div className="flex flex-col max-w-lg">
-            { tab === 1 ? <About /> : tab === 2 ? <Work /> : tab === 3 ? <Projects /> : tab === 4 ? <CurrentLearning /> : <></>}
+            { tab === 1 ? <Work /> : tab === 2 ? <Projects /> : tab === 3 ? <CurrentLearning /> : <></>}
         </div>
     )
 };
