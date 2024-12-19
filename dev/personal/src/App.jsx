@@ -11,10 +11,13 @@ const router = createBrowserRouter(
     <>
       <Route path='/' index element={<HomePage />} />
     </>
-  )
+  ),
+  {
+    basename: '/sitev2/',
+  }
 );
 
 const App = () => {
   return <RouterProvider router={router} />;
 };
-export default App;
+export default App; 
