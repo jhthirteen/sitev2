@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import ConnectEdDemo from '../assets/ConnectEdDemo.mp4'
+import xv6_1 from '../assets/xv61.png'
+import xv6_2 from '../assets/xv62.png'
 
 const Projects = () => {
     
@@ -25,6 +27,8 @@ const Projects = () => {
             {tab2 && (
             <>
                 <p>For my Operating Systems class, everyone in the class was randomly divided into teams of 4 for a semester long project. Given the xv6 Operating System's Code Base, which is roughly 9,000 - 10,000 lines of C code, we had to make a series of modifications to add functionality that is seen in typical Linux distributions. First, we were tasked with locating and understanding the code and processes to implement a system call. Then, our teams were tasked with developing some custom system calls ourselves, such as a custom instance of mkdir that created 2 directories at once. For the second project, we were tasked with implementing a system call that chose whether or not the child or parent process ran after executing a fork system call. Then, we were tasked with understanding xv6's CPU Scheduler, and implementing both a stride scheduling policy and a system call that allowed a user to choose stride scheduling, or traditional round robin scheduling. Finally, we made modifications to xv6's shell code, implementing I/O redirection, piping between two processes, background execution of a process, and functionality to track the history of a user's shell input.</p>
+                <img src={xv6_1} className="mx-auto mt-5 mb-5"/>
+                <img src={xv6_2} className="mx-auto mt-5 mb-5"/>
             </>
             )}
             <button className={`${tab3 ? active : notActive}`} onClick={() => setTab3(!tab3)}>Internship Capstone: Security Risks and Safe Use of Generative AI</button>
