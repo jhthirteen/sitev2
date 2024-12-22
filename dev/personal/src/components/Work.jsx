@@ -14,24 +14,24 @@ const Work = () => {
 
     return (
         <div className="text-white">
-            <button className={`${tab1 ? active : notActive}`} onClick={() => setTab1(!tab1)}>Security Analyst Intern, FoxPointe Solutions - Summer 2024</button>
+            <button className={`${tab1 ? active : notActive}`} onClick={() => setTab1(!tab1)}>Cyber Security Intern, FoxPointe Solutions - Summer 2024</button>
             {tab1 && ( 
             <>
-                <p>During my time at FoxPointe Solutions, I had the opportunity to learn about various aspects of the cybersecurity field. I worked on Risk Assessments, GAP Analyses, Information Privacy Assessments, and Vulnerability Assessments. Additionally, I had the chance to work on some SOC 2 Compliance projects. By working cloesly with my mentors, I also gained insights into the business side of cybersecurity compliance, from engaging to clients, interviews, and making sales.</p>
+                <p>At FoxPointe Solutions, I have had the opportunity to learn about various aspects of the cybersecurity industry. I worked on Risk Assessments, GAP Analyses, Information Privacy Assessments, and Vendor Risk Management Programs under the guidance of the NIST SP 800-53 Framework. By working closely with my mentors, I also gained insights into the business side of cybersecurity compliance, from engaging with clients, interviews with personnel to identify and categorize risk, and making sales. Recently, I have started some programming projects to optimize portions of the risk assessment process. My first project revolves around a lightweight application written in Python to parse multiple .docx files concurrently. More information can be found under the 'Projects' tab.</p>
                 <img src={WorkLogo} className="mx-auto mt-5 mb-5"/>
             </>
             )}
-            <button className={`${tab2 ? active : notActive}`} onClick={() => setTab2(!tab2)}>CTO, StackHacks Binghamton University - 2024</button>
+            <button className={`${tab2 ? active : notActive}`} onClick={() => setTab2(!tab2)}>CTO, StackHacks Binghamton University - Present</button>
             {tab2 && ( 
             <>
-                <p>StackHacks is a club dedicated to fostering technological growth and innovation for the undergraduate student body at Binghamton. We aim to provide project teams with real world, cutting edge problems that aid in breaking into the tech world. As the CTO, I help manage and plan the project at a high level, plan and host technical workshops, present for club recruitment events, and conduct interviews for new members.</p>
+                <p>StackHacks is a club dedicated to fostering technological growth and innovation for the undergraduate student body at Binghamton University. We aim to provide project teams with real world, cutting edge problems that aid in breaking into various sectors of the tech industry. As the CTO, I help manage and plan the projects at a high level, present for club recruitment events, and conduct interviews for new members. For the 24-25 Academic Year, I am acting as a mentor for our Machine Learning division, who are working to develop a Neural Network that classifys numbers and a GUI to interact with the model in real-time. Additionally, our E-Board is developing a series of LeetCode workshops with a goal of refining students' skills for technical interviews.</p>
                 <img src={StackHacks} className="w-52 h-52 mx-auto mt-5 mb-5"/>
             </>
             )}
             <button className={`${tab3 ? active : notActive}`} onClick={() => setTab3(!tab3)}>Student Advisory Committee Binghamton University CS Department - 2024</button>
             {tab3 && ( 
             <>
-                <p>As a member of the SAC, I help conduct surveys and draft recommendations for members of faculty in the Computer Science Department that are up for tenure. This is a select team of undergraduates, graduates, and PhD Studetns who aim to provide an objective view of faculty member's performance.</p>
+                <p>As a member of the Student Advisory Committee, I help conduct surveys and draft recommendations for members of faculty in the Computer Science Department that are up for tenure or review. This is a select team of undergraduates, graduate students, and PhD students who aim to provide an objective view of faculty member's research, teaching, and advising.</p>
                 <img src={BU} className="mx-auto h-48 mt-5 mb-5"/>
             </>
             )}
