@@ -23,16 +23,16 @@ const Projects = () => {
                 </video>
             </>
             )}
-            <button className={`${tab2 ? active : notActive}`} onClick={() => setTab2(!tab2)}>xv6 Kernel Modifications</button>
-            {tab2 && (
+            <button className={`${tab2 ? active : notActive}`} onClick={() => setTab2(!tab2)}>Microsoft Word .docx Parser</button>
+            {tab3 && (<p>As an intern at FoxPointe solutions, I noticed how time consuming it could be to manually search through an Organization's policies to find references to a specific security control. I wanted to start a personal project that would optimize this, operating under the assumption that we could use specific keywords to limit the search space. I created a lightweight Python program that allows a user to automate this search process for a command line specified set of keywords across multiple .docx files. When run, the user is prompted with a simple Graphical User Interface that contains a search bar, asking for the keywords to search for. The general logic flow is as follows: The program extracts the XML file that contains the text of each .docx file and stores the XML in a new directory called ./text_docs. Then, the program recurisvely searches the XML Tree for &lt;w:t&gt; tags, which contain the text content. Then, while parsing through the tags, two arrays are defined, uniqueWords and textInstances. If the number of unique words matchees the number of keywords, the text instances are returned.</p>)}
+            <button className={`${tab3 ? active : notActive}`} onClick={() => setTab3(!tab3)}>xv6 Kernel Modifications</button>
+            {tab3 && (
             <>
                 <p>For my Operating Systems class, everyone in the class was randomly divided into teams of 4 for a semester long project. Given the xv6 Operating System's Code Base, which is roughly 9,000 - 10,000 lines of C code, we had to make a series of modifications to add functionality that is seen in typical Linux distributions. First, we were tasked with locating and understanding the code and processes to implement a system call. Then, our teams were tasked with developing some custom system calls ourselves, such as a custom instance of mkdir that created 2 directories at once. For the second project, we were tasked with implementing a system call that chose whether or not the child or parent process ran after executing a fork system call. Then, we were tasked with understanding xv6's CPU Scheduler, and implementing both a stride scheduling policy and a system call that allowed a user to choose stride scheduling, or traditional round robin scheduling. Finally, we made modifications to xv6's shell code, implementing I/O redirection, piping between two processes, background execution of a process, and functionality to track the history of a user's shell input.</p>
                 <img src={xv6_1} className="mx-auto mt-5 mb-5"/>
                 <img src={xv6_2} className="mx-auto mt-5 mb-5"/>
             </>
             )}
-            <button className={`${tab3 ? active : notActive}`} onClick={() => setTab3(!tab3)}>Internship Capstone: Security Risks and Safe Use of Generative AI</button>
-            {tab3 && (<p>Identified strengths of LLM's like the ability to find specific references in large text documents, and pitfalls like faithful and domain-based knowledge hallucinations. The presentation then highlighted areas within the firm that could benefit from the use of generative AI, and areas where it may be best to be avoided. Finally, the project concluded with highlighting new areas that generative AI was being used in the cybersecurity space, from complex deepfake attacks to enhanced phishing campaigns. This was presented to upper management at the end of the internsihp.</p>)}
         </div>
     )
 };
