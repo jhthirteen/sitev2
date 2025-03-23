@@ -2,6 +2,7 @@ import { useState } from 'react'
 import ConnectEdDemo from '../assets/ConnectEdDemo.mp4'
 import xv6_1 from '../assets/xv61.png'
 import xv6_2 from '../assets/xv62.png'
+import TechTag from './TechTag'
 
 const Projects = () => {
     
@@ -17,6 +18,7 @@ const Projects = () => {
             <button className={`${tab1 ? active : notActive}`} onClick={() => setTab1(!tab1)}>AI Powered Music Recommender</button>
             {tab1 && (
             <>
+                <TechTag name="Python" color="bg-yellow-500" />
                 <p>I tackled this project because I love music, and simultaneously wanted to learn more about some more advanced topics in web development. The site is mainly a wrapper of the APIs provided by OpenAI, Spotify, and LastFM. Users can type an artist, song, or mood for a playlist into a search bar, and cards with artist or song names, with images and descriptions are automatically rendered for the user to look through. This project gave me some foundational knowledge in React, JavaScript, HTML, TailwindCSS, Vite, interacting with data from APIs, and UI design.</p>
                 <video controls className="mx-auto mt-5 mb-5">
                     <source src={ConnectEdDemo} type="video/mp4"/>
@@ -24,7 +26,7 @@ const Projects = () => {
             </>
             )}
             <button className={`${tab2 ? active : notActive}`} onClick={() => setTab2(!tab2)}>Microsoft Word .docx Parser</button>
-            {tab3 && (<p>As an intern at FoxPointe solutions, I noticed how time consuming it could be to manually search through an Organization's policies to find references to a specific security control. I wanted to start a personal project that would optimize this, operating under the assumption that we could use specific keywords to limit the search space. I created a lightweight Python program that allows a user to automate this search process for a command line specified set of keywords across multiple .docx files. When run, the user is prompted with a simple Graphical User Interface that contains a search bar, asking for the keywords to search for. The general logic flow is as follows: The program extracts the XML file that contains the text of each .docx file and stores the XML in a new directory called ./text_docs. Then, the program recurisvely searches the XML Tree for &lt;w:t&gt; tags, which contain the text content. Then, while parsing through the tags, two arrays are defined, uniqueWords and textInstances. If the number of unique words matchees the number of keywords, the text instances are returned.</p>)}
+            {tab2 && (<p>As an intern at FoxPointe solutions, I noticed how time consuming it could be to manually search through an Organization's policies to find references to a specific security control. I wanted to start a personal project that would optimize this, operating under the assumption that we could use specific keywords to limit the search space. I created a lightweight Python program that allows a user to automate this search process for a command line specified set of keywords across multiple .docx files. When run, the user is prompted with a simple Graphical User Interface that contains a search bar, asking for the keywords to search for. The general logic flow is as follows: The program extracts the XML file that contains the text of each .docx file and stores the XML in a new directory called ./text_docs. Then, the program recurisvely searches the XML Tree for &lt;w:t&gt; tags, which contain the text content. Then, while parsing through the tags, two arrays are defined, uniqueWords and textInstances. If the number of unique words matchees the number of keywords, the text instances are returned.</p>)}
             <button className={`${tab3 ? active : notActive}`} onClick={() => setTab3(!tab3)}>xv6 Kernel Modifications</button>
             {tab3 && (
             <>
