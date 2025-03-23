@@ -15,7 +15,7 @@ const Work = () => {
     const notActive = "text-sky-500 text-2xl font-bold block text-left";
 
     return (
-        <div className="text-white">
+        <div>
             <button className={`${tab1 ? active : notActive}`} onClick={() => setTab1(!tab1)}>Software Engineering Intern @ Capital One - Summer 2025</button>
             {tab1 && (
             <>

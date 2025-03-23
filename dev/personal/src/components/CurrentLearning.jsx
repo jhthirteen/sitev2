@@ -12,7 +12,7 @@ const CurrentLearning = () => {
     const notActive = "text-sky-500 text-2xl font-bold block text-left";
 
     return (
-        <div className="text-white">
+        <div>
             <button className={`${tab1 ? active : notActive}`} onClick={() => setTab2(!tab1)}>Spring 2025 Coursework</button>
             {tab1 && (
             <ul className="list-disc list-inside mb-5">

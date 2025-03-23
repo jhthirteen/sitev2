@@ -2,7 +2,7 @@ import { useState } from 'react'
 
 const Options = ({ tab, handle }) => {
 
-    const defaultDesc = "text-white font-bold hover:text-sky-500 hover:italic";
+    const defaultDesc = "font-bold hover:text-sky-500 hover:italic";
     const activeDesc = "text-sky-500 font-bold italic";
 
     const handleClick = (num) => {

@@ -14,7 +14,7 @@ const Projects = () => {
     const notActive = "text-sky-500 text-2xl font-bold block text-left";
     
     return(
-        <div className="text-white">
+        <div>
             <button className={`${tab1 ? active : notActive}`} onClick={() => setTab1(!tab1)}>AI Powered Music Recommender</button>
             {tab1 && (
             <>
