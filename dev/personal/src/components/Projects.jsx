@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import ConnectEdDemo from '../assets/ConnectEdDemo.mp4'
+import exCalendar from '../assets/exCalendar.png'
 import xv6_1 from '../assets/xv61.png'
 import xv6_2 from '../assets/xv62.png'
 import TechTag from './TechTag'
@@ -9,6 +10,7 @@ const Projects = () => {
     const [tab1, setTab1] = useState(true);
     const [tab2, setTab2] = useState(true);
     const [tab3, setTab3] = useState(true);
+    const [tab4, setTab4] = useState(true);
 
     const active = "text-sky-500 text-2xl font-bold italic block text-left";
     const notActive = "text-sky-500 text-2xl font-bold block text-left";
@@ -30,6 +32,18 @@ const Projects = () => {
                     <source src={ConnectEdDemo} type="video/mp4"/>
                 </video>
             </>
+            )}
+            <button className={`${tab4 ? active : notActive}`} onClick={() => setTab4(!tab4)}>D2L Brightspace to Google Calendar Sync Tool</button>
+            {tab4 && (
+                <>
+                    <div className="fex-row py-2 space-x-2">
+                        <TechTag name="Python" color="bg-[#4B8BBE]" />
+                        <TechTag name="APIs" color="bg-[#8B0000]" />
+                        <TechTag name="Google Calendar" color="bg-[#228B22]" />
+                    </div>
+                    <p>Binghamton University uses the software D2L Brightspace to host classes. Every class hosts its assignments on the site, and there is a nice built in calendar that shows when everything is do. However, being a person who relies on Google Calendar to stay organized with my every-day life, having two important dates and deadlines cluttered across two different calendar applications was annoying, and led to me missing assignment due dates on multiple occasions. This tool automates the process of syncing data from Brightspace Classes to Google Calendar by parsing a .ics calendar file to find assignments linked to classes, creates new Assignment objects, and adds any non-duplicate ones to our calendar instantaneously through Google's API. Every "new" assignment is automatically created and uploaded to my personal Google Calendar.</p>
+                    <img src={exCalendar} className="mx-auto" />
+                </>
             )}
             <button className={`${tab2 ? active : notActive}`} onClick={() => setTab2(!tab2)}>Microsoft Word .docx Parser</button>
             {tab2 && (
