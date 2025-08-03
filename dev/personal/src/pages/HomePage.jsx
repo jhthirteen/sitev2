@@ -44,11 +44,11 @@ const HomePage = () => {
                     <Connect />
                     <LightNightMode stateChange={changeMode}/>
                 </div>
-                <div className="flex flex-col items-center p-6">
+                <div className={`flex flex-col items-center p-6 ${nightMode ? night : day}`}>
                     {activeTab !== 0 && (
-                    <div ref={optionsTextRef}>
-                        <OptionsText tab={activeTab} />    
-                    </div>
+                        <div ref={optionsTextRef} className={`absolute left-0 right-0 z-10 ${nightMode ? night : day}`}>
+                            <OptionsText tab={activeTab} />
+                        </div>
                     )}
                 </div>
             </div>

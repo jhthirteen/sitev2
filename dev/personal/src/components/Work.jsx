@@ -1,50 +1,161 @@
 import { useState } from 'react'
-import WorkLogo from '../assets/CompanyLogo.png'
+import c1Logo from '../assets/capitalOneLogo.png'
+import foxPointeLogo from '../assets/foxpointeLogo.jpeg'
 import StackHacks from '../assets/StackHacks.png'
-import BU from '../assets/BU.jpeg'
-import CapitalOne from '../assets/cap1Logo.jpeg'
+import buLogo from '../assets/bingLogo.png'
 
 const Work = () => {
+    const [activeCard, setActiveCard] = useState(null);
 
-    const [tab1, setTab1] = useState(true);
-    const [tab2, setTab2] = useState(true);
-    const [tab3, setTab3] = useState(true);
-    const [tab4, setTab4] = useState(true);
-
-    const active = "text-sky-500 text-2xl font-bold italic block text-left";
-    const notActive = "text-sky-500 text-2xl font-bold block text-left";
+    const workExperience = [
+        {
+            id: 1,
+            title: "Software Engineering Intern",
+            company: "Capital One",
+            period: "Summer 2025",
+            location: "Manhattan, NYC",
+            description: "- Developed Python Scripts to identify key performance bottlenecks in internal applications.\n- Built a batch-processing pipeline in Python to generate LLM-driven insights tailored to distinct user groups\n- Designed and hosted FastAPI endpoints on AWS ECS Fargate to enable communication with internal LLMs\n- Created a reusable React component with JavaScript to present personalized insights to users",
+            logo: c1Logo, // Placeholder for CapitalOne logo
+            color: "bg-blue-500",
+            year: "2025"
+        },
+        {
+            id: 2,
+            title: "Cyber Security Intern",
+            company: "FoxPointe Solutions",
+            period: "Summer 2024",
+            location: "Syracuse, NY",
+            description: "- Performed risk assessments, gap analyses, privacy assessments, and security plans for clients\n- Documented risks and fixes associated with clients’ technology and network infrastructure",
+            logo: foxPointeLogo, // Placeholder for WorkLogo
+            color: "bg-green-500",
+            year: "2024"
+        },
+        {
+            id: 3,
+            title: "CTO",
+            company: "StackHacks",
+            period: "Present",
+            location: "Binghamton, NY",
+            description: "- Led the strategic planning and management of the club’s technical projects, ensuring code quality, reliability, and maintainability\n- Maintained and improved the club’s technical infrastructure to support events and growth\n- Organized and led workshops on technical skills, interviewing, leadership, and innovation in software development",
+            logo: StackHacks, // Placeholder for StackHacks
+            color: "bg-purple-500",
+            year: "2024-25"
+        },
+        {
+            id: 4,
+            title: "Student Advisory Committee",
+            company: "Binghamton University",
+            period: "2024",
+            location: "Binghamton, NY",
+            description: "- Appointed by faculty to serve on a committee of students to provide an objective overview of faculty that are up for tenure or evaluation\n- Wrote reports that leveraged previous student’s feedback on teaching, advising, and research experiences",
+            logo: buLogo, // Placeholder for BU
+            color: "bg-red-500",
+            year: "2024"
+        }
+    ];
 
     return (
-        <div>
-            <button className={`${tab1 ? active : notActive}`} onClick={() => setTab1(!tab1)}>Software Engineering Intern @ Capital One - Summer 2025</button>
-            {tab1 && (
-            <>
-                <p>I will be an incoming Software Engineering Intern at Capital One through the Technology Internship Program. I will be located in the New York City Office for the Summer!</p>
-                <img src={CapitalOne} className='w-128 w-72 mx-auto mt-5 mb-5'/>
-            </>    
-            )}
-            <button className={`${tab2 ? active : notActive}`} onClick={() => setTab2(!tab2)}>Cyber Security Intern @ FoxPointe Solutions - Summer 2024</button>
-            {tab2 && ( 
-            <>
-                <p>At FoxPointe Solutions, I have had the opportunity to learn about various aspects of the cybersecurity industry. I worked on Risk Assessments, GAP Analyses, Information Privacy Assessments, and Vendor Risk Management Programs under the guidance of the NIST SP 800-53 Framework. By working closely with my mentors, I also gained insights into the business side of cybersecurity compliance, from engaging with clients, interviews with personnel to identify and categorize risk, and making sales. Recently, I have started some programming projects to optimize portions of the risk assessment process. My first project revolves around a lightweight application written in Python to parse multiple .docx files concurrently. More information can be found under the 'Projects' tab.</p>
-                <img src={WorkLogo} className="mx-auto mt-5 mb-5"/>
-            </>
-            )}
-            <button className={`${tab3 ? active : notActive}`} onClick={() => setTab3(!tab3)}>CTO of StackHacks @ Binghamton University - Present</button>
-            {tab3 && ( 
-            <>
-                <p>StackHacks is a club dedicated to fostering technological growth and innovation for the undergraduate student body at Binghamton University. We aim to provide project teams with real world, cutting edge problems that aid in breaking into various sectors of the tech industry. As the CTO, I help manage and plan the projects at a high level, present for club recruitment events, and conduct interviews for new members. For the 24-25 Academic Year, I am acting as a mentor for our Machine Learning division, who are working to develop a Neural Network that classifys numbers and a GUI to interact with the model in real-time. Additionally, our E-Board is developing a series of LeetCode workshops with a goal of refining students' skills for technical interviews.</p>
-                <img src={StackHacks} className="w-52 h-52 mx-auto mt-5 mb-5"/>
-            </>
-            )}
-            <button className={`${tab4 ? active : notActive}`} onClick={() => setTab4(!tab4)}>Student Advisory Committee @ Binghamton University CS Department - 2024</button>
-            {tab4 && ( 
-            <>
-                <p>As a member of the Student Advisory Committee, I help conduct surveys and draft recommendations for members of faculty in the Computer Science Department that are up for tenure or review. This is a select team of undergraduates, graduate students, and PhD students who aim to provide an objective view of faculty member's research, teaching, and advising.</p>
-                <img src={BU} className="mx-auto h-48 mt-5 mb-5"/>
-            </>
-            )}
+        <div className="w-screen min-h-screen py-12">
+            <style>{`
+                .custom-scrollbar::-webkit-scrollbar {
+                    height: 8px;
+                }
+                .custom-scrollbar::-webkit-scrollbar-track {
+                    background: transparent;
+                    border-radius: 10px;
+                }
+                .custom-scrollbar::-webkit-scrollbar-thumb {
+                    background: #0ea5e9;
+                    border-radius: 10px;
+                    transition: background 0.3s ease;
+                }
+                .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+                    background: #0284c7;
+                }
+                .custom-scrollbar::-webkit-scrollbar-thumb:active {
+                    background: #0369a1;
+                }
+            `}</style>
+            {/* Timeline Container */}
+            <div className="relative w-full">
+                {/* Horizontal scroll container */}
+                <div className="overflow-x-auto pb-8 custom-scrollbar">
+                    <div className="flex space-x-12 min-w-max px-8">
+                        {workExperience.map((experience, index) => (
+                            <div key={experience.id} className="relative flex flex-col items-center">
+                                {/* Timeline dot and line */}
+                                <div className="relative">
+                                    <div className={`w-4 h-4 rounded-full ${experience.color} border-4 border-white shadow-lg z-10 relative`}></div>
+                                </div>
+                                
+                                {/* Year label */}
+                                <div className="mt-2 mb-4">
+                                    <span className="text-sm font-semibold opacity-60 bg-black/10 dark:bg-white/10 px-2 py-1 rounded-full">
+                                        {experience.year}
+                                    </span>
+                                </div>
+
+                                {/* Experience card */}
+                                <div 
+                                    className={`w-96 bg-black/10 dark:bg-white/10 border border-current/20 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer transform hover:-translate-y-2 ${
+                                        activeCard === experience.id ? 'ring-2 ring-sky-500 scale-105' : ''
+                                    }`}
+                                    onClick={() => setActiveCard(activeCard === experience.id ? null : experience.id)}
+                                >
+                                    <div className="p-6">
+                                        {/* Header */}
+                                        <div className="flex items-start justify-between mb-4">
+                                            <div className="flex-1">
+                                                <h3 className="text-lg font-bold mb-1">
+                                                    {experience.title}
+                                                </h3>
+                                                <p className="text-sky-600 font-semibold mb-1">
+                                                    {experience.company}
+                                                </p>
+                                                <p className="text-sm opacity-60">
+                                                    {experience.period} • {experience.location}
+                                                </p>
+                                            </div>
+                                            <div className={`w-12 h-12 rounded-lg flex items-center justify-center text-white font-bold text-xl ml-4`}>
+                                                <img src={experience.logo} className="w-full h-full"></img>
+                                            </div>
+                                        </div>
+
+                                        {/* Description (expandable) */}
+                                        <div className={`transition-all duration-300 overflow-hidden ${
+                                            activeCard === experience.id ? 'max-h-96 opacity-100' : 'max-h-24 opacity-75'
+                                        }`}>
+                                            <div className="text-sm leading-relaxed opacity-75">
+                                            {experience.description.split('\n').map((line, index) => (
+                                                <p key={index}>{line}</p>
+                                            ))}
+                                            </div>
+                                        </div>
+
+                                        {/* Expand indicator */}
+                                        <div className="mt-4 flex justify-center">
+                                            <button className="text-sky-500 text-sm font-medium hover:text-sky-700 transition-colors">
+                                                {activeCard === experience.id ? 'Show Less ▲' : 'Show More ▼'}
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+
+                {/* Scroll hint */}
+                <div className="flex justify-center mt-4">
+                    <div className="text-sm opacity-60 flex items-center space-x-2">
+                        <span>←</span>
+                        <span>Scroll horizontally to my work experience</span>
+                        <span>→</span>
+                    </div>
+                </div>
+            </div>
         </div>
-    )
+    );
 };
+
 export default Work;
