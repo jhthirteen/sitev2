@@ -77,6 +77,14 @@ const Projects = () => {
         }
     ];
 
+    const handleCardClick = (e, projectId) => {
+        // Don't toggle if clicking on video or other interactive elements
+        if (e.target.tagName === 'VIDEO' || e.target.closest('video')) {
+            return;
+        }
+        setActiveCard(activeCard === projectId ? null : projectId);
+    };
+
     return (
         <div className="w-screen min-h-screen py-12">
             <style>{`
@@ -107,7 +115,7 @@ const Projects = () => {
                     <div className="flex space-x-12 min-w-max px-8">
                         {projects.map((project, index) => (
                             <div key={project.id} className="relative flex flex-col items-center">
-                                {/* Timeline dot and line */}
+                                {/* Timeline dot */}
                                 <div className="relative">
                                     <div className={`w-4 h-4 rounded-full bg-gradient-to-r ${project.gradient} border-4 border-white shadow-lg z-10 relative`}></div>
                                 </div>
@@ -124,7 +132,7 @@ const Projects = () => {
                                     className={`w-[500px] bg-black/10 dark:bg-white/10 border border-current/20 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer transform hover:-translate-y-2 overflow-hidden ${
                                         activeCard === project.id ? 'ring-2 ring-sky-500 scale-105' : ''
                                     }`}
-                                    onClick={() => setActiveCard(activeCard === project.id ? null : project.id)}
+                                    onClick={(e) => handleCardClick(e, project.id)}
                                 >
                                     {/* Cover image at the top */}
                                     <div className="w-full h-48 overflow-hidden">
@@ -157,7 +165,7 @@ const Projects = () => {
 
                                         {/* Media content (only when expanded) */}
                                         {activeCard === project.id && project.media && (
-                                            <div className="mt-4">
+                                            <div className="mt-4" onClick={(e) => e.stopPropagation()}>
                                                 {project.media.type === "video" && (
                                                     <video controls className="w-full rounded-lg">
                                                         <source src={project.media.src} type="video/mp4"/>
