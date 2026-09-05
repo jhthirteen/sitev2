@@ -5,9 +5,9 @@ const About = () => {
 
     const [tab1, setTab1] = useState(true);
     const [tab2, setTab2] = useState(true);
+const active = "text-sky-500 text-2xl italic block text-left";
 
-    const active = "text-sky-500 text-2xl font-bold italic block text-left";
-    const notActive = "text-sky-500 text-2xl font-bold block text-left";
+    const notActive = "text-sky-500 text-2xl block text-left";
 
     return(
         <div className="text-white">

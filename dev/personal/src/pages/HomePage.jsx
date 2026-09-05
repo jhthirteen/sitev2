@@ -1,16 +1,15 @@
-import { useState, useRef, useEffect } from 'react'
+import { useState } from 'react'
 import Header from '../components/Header'
 import HomeText from '../components/HomeText'
-import Options from '../components/Options'
 import Connect from '../components/Connect'
+import HeroAvatar from '../components/HeroAvatar'
 import OptionsText from '../components/OptionsText'
-import LightNightMode from '../components/LightNightMode'
 
 const HomePage = () => {
 
     const [activeTab, setActiveTab] = useState(0);
 
-    const [nightMode, setNightMode] = useState(true);
+    const [nightMode, setNightMode] = useState(false);
 
     const changeMode = () => {
         setNightMode(!nightMode);
@@ -18,41 +17,34 @@ const HomePage = () => {
 
     const night = 'bg-black text-white';
     const day = 'bg-white text-black';
-    
+
     const handleChange = (num) => {
         setActiveTab(num);
     };
 
-    const optionsTextRef = useRef(null);
-
-    useEffect(() => {
-        if( optionsTextRef.current && activeTab !== 0 ){
-            optionsTextRef.current.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
-    }, [activeTab]);
-
     return (
-        <>
-            <div className={`min-h-screen flex flex-col overflow-auto ${nightMode ? night : day}`}>
-                <div className="flex flex-col items-center">
-                    <Header />
-                    <HomeText />
-                    <Options tab={activeTab} handle={handleChange}/>
-                    <Connect />
-                    <LightNightMode stateChange={changeMode}/>
-                </div>
-                <div className={`flex flex-col items-center p-6 ${nightMode ? night : day}`}>
-                    {activeTab !== 0 && (
-                        <div ref={optionsTextRef} className={`absolute left-0 right-0 z-10 ${nightMode ? night : day}`}>
-                            <OptionsText tab={activeTab} />
+        <div className={`min-h-screen flex flex-col ${nightMode ? night : day}`}>
+            <Header
+                tab={activeTab}
+                handle={handleChange}
+                nightMode={nightMode}
+                stateChange={changeMode}
+            />
+
+            <main className="flex-1 w-full">
+                {activeTab === 0 ? (
+                    <section className="flex flex-col items-center justify-center px-6 pt-20 pb-16">
+                        <HeroAvatar nightMode={nightMode} />
+                        <HomeText />
+                        <div className="mt-8">
+                            <Connect />
                         </div>
-                    )}
-                </div>
-            </div>
-        </>
+                    </section>
+                ) : (
+                    <OptionsText tab={activeTab} />
+                )}
+            </main>
+        </div>
     )
 };
 export default HomePage;

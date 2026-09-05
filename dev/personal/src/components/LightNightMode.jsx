@@ -1,24 +1,20 @@
 import { FaSun } from 'react-icons/fa';
 import { IoMoon } from 'react-icons/io5'
-import { useState } from 'react';
+import PropTypes from 'prop-types';
 
-const LightNightMode = ({ stateChange }) => {
-
-    const [night, switchNight] = useState(true);
-    const [day, switchDay] = useState(false);
-
-    const handleClick = () => {
-        stateChange();
-        switchNight(!night);
-        switchDay(!day);
-    }
-
+const LightNightMode = ({ nightMode, stateChange }) => {
     return (
         <div>
-            { night && <button onClick={() => handleClick()}><FaSun className="w-8 h-8"></FaSun></button> }
-            { day && <button onClick={() => handleClick()}><IoMoon className="w-8 h-8"></IoMoon></button>}
+            <button onClick={stateChange}>
+                {nightMode ? <FaSun className="w-8 h-8" /> : <IoMoon className="w-8 h-8" />}
+            </button>
         </div>
     )
+};
+
+LightNightMode.propTypes = {
+    nightMode: PropTypes.bool,
+    stateChange: PropTypes.func.isRequired,
 };
 
 export default LightNightMode;
