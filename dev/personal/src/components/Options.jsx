@@ -10,7 +10,7 @@ const Options = ({ tab, handle }) => {
 
     return (
         <nav>
-            <div className="flex items-center gap-5 sm:gap-8">
+            <div className="flex items-center gap-4 sm:gap-8">
                 {navItems.map((item) => {
                     const active = tab === item.id;
                     return (

@@ -6,7 +6,7 @@ const LightNightMode = ({ nightMode, stateChange }) => {
     return (
         <div>
             <button onClick={stateChange}>
-                {nightMode ? <FaSun className="w-8 h-8" /> : <IoMoon className="w-8 h-8" />}
+                {nightMode ? <FaSun className="w-6 h-6" /> : <IoMoon className="w-6 h-6" />}
             </button>
         </div>
     )

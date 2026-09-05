@@ -5,9 +5,10 @@ import PropTypes from 'prop-types'
 const Header = ({ tab, handle, nightMode, stateChange }) => {
     return (
         <header className={`sticky top-0 z-30 w-full backdrop-blur-md border-b border-current/10 ${nightMode ? 'bg-black/60' : 'bg-white/70'}`}>
-            <div className="max-w-5xl mx-auto px-6 py-4 flex items-center justify-center relative">
+            <div className="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
+                <span className="w-7 h-7 invisible shrink-0" aria-hidden="true" />
                 <Options tab={tab} handle={handle} />
-                <div className="absolute right-6 top-1/2 -translate-y-1/2">
+                <div className="w-7 h-7 shrink-0 flex items-center justify-center">
                     <LightNightMode nightMode={nightMode} stateChange={stateChange} />
                 </div>
             </div>
